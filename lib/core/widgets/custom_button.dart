@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie/core/resources/font_manager.dart';
 import '../resources/color_manager.dart';
 
 
@@ -11,13 +12,16 @@ class CustomButton extends StatelessWidget {
   final VoidCallback onPressed;
   final Color? backgroundColor;
   final Color? textColor;
-
+final TextStyle? fontWeight;
+final Color? borderSideColor;
   const CustomButton({
     super.key,
     required this.text,
     required this.onPressed,
     this.backgroundColor,
     this.textColor,
+    this.fontWeight,
+    this.borderSideColor
   });
 
   @override
@@ -26,6 +30,7 @@ class CustomButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         backgroundColor: backgroundColor ?? ColorManager.primaryYellow,
         shape: RoundedRectangleBorder(
+          side: BorderSide(color:borderSideColor??Colors.transparent,width: 1.5 ),
           borderRadius: BorderRadius.circular(15),
         ),
         minimumSize: const Size(double.infinity, 50),
@@ -35,8 +40,8 @@ class CustomButton extends StatelessWidget {
         text,
         style: TextStyle(
           color: textColor ?? ColorManager.primaryBackground,
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
+          fontSize: FontSize.s20,
+          fontWeight: FontWeightManager.semiBold,
         ),
       ),
     );

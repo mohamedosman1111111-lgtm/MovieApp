@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie/features/main_layout/presentation/view/main_layout.dart';
+import 'package:movie/features/onboarding/presentation/screens/onboarding_screen.dart';
 
 import 'routes.dart';
 
@@ -14,8 +15,8 @@ class RouteGenerator {
         );
       case Routes.onboardingRoute:
         return MaterialPageRoute(
-          builder: (_) =>
-              const Scaffold(body: Center(child: Text("Onboarding Screen"))),
+          builder: (_) =>OnBoarding()
+             ,
         );
       case Routes.loginRoute:
         return MaterialPageRoute(
